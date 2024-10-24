@@ -116,8 +116,9 @@ public class LoginPage extends Application {
             "-fx-padding: 8;" +
             "-fx-font-size: 14px"
         );
+        asuIdField.setFocusTraversable(false);  
 
-        // Password field
+        // Password field (modify this part)
         passwordField = new PasswordField();
         passwordField.setPromptText("Password");
         passwordField.setPrefWidth(300);
@@ -128,6 +129,9 @@ public class LoginPage extends Application {
             "-fx-padding: 8;" +
             "-fx-font-size: 14px"
         );
+        passwordField.setFocusTraversable(false);  
+
+
 
         // Container for Activate link and login button
         HBox actionContainer = new HBox(20);
