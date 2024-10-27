@@ -76,7 +76,7 @@ public class SellerPage {
             this.originalPrice = originalPrice;
             this.condition = condition;
             this.adjustedPrice = calculateAdjustedPrice(originalPrice, condition);
-            this.imageFile = imageFile;  // New field initialization
+            this.imageFile = imageFile; 
         }
     }
 
@@ -161,7 +161,7 @@ public class SellerPage {
             "-fx-border-color: black; " +    // Add black border
             "-fx-border-radius: 3px; " +     // Add border radius
             "-fx-padding: 5 10; " +          // Add some padding inside the border
-            "-fx-background-radius: 3px;"     // Match background radius with border
+            "-fx-background-radius: 3px;"     // background radius with border
         );
 
         Button logoutBtn = new Button("Logout");
@@ -171,7 +171,7 @@ public class SellerPage {
             "-fx-padding: 5 15;" +
             "-fx-border-color: black; " +    // Add black border
             "-fx-border-radius: 3px; " +     // Add border radius
-            "-fx-background-radius: 3px; " + // Match background radius with border
+            "-fx-background-radius: 3px; " + // background radius with border
             "-fx-cursor: hand;" +
             "-fx-font-size: 14px"
         );
@@ -197,7 +197,7 @@ public class SellerPage {
         // Add padding around the buttons
         navPanel.setPadding(new Insets(10, 0, 0, 0));  // Top padding of 10
         navPanel.getChildren().addAll(sellingBtn, buyingBtn);
-        navPanel.setMaxWidth(150);  // Match button width
+        navPanel.setMaxWidth(150);  // button width
         navPanel.setAlignment(Pos.TOP_LEFT);
         
         // Center Form Panel
@@ -237,7 +237,7 @@ public class SellerPage {
             "-fx-padding: 8 15;" +
             "-fx-border-color: black;" +      // Add black border
             "-fx-border-radius: 3px;" +       // Add border radius
-            "-fx-background-radius: 3px;" +    // Match background radius
+            "-fx-background-radius: 3px;" +    // background radius
             "-fx-cursor: hand;" +
             "-fx-font-size: 12px"
         );
@@ -293,7 +293,7 @@ public class SellerPage {
             "-fx-padding: 10 5;" +
             "-fx-border-color: black;" +      // Add black border
             "-fx-border-radius: 3px;" +       // Add border radius
-            "-fx-background-radius: 3px;" +    // Match background radius
+            "-fx-background-radius: 3px;" +    // background radius
             "-fx-cursor: hand;" +
             "-fx-font-size: 14px"
         );
@@ -325,22 +325,17 @@ public class SellerPage {
         
         listingRow.setPadding(new Insets(20, 0, 0, 0));  // Add top padding to create space
         formPanel.getChildren().add(listingRow);  // Add listingRow directly to formPanel
+    
      // Right Listings Panel
         VBox listingsPanel = new VBox(10);
-        listingsPanel.setStyle(
-            "-fx-background-color: white;" +
-            "-fx-border-color: #cccccc;" +
-            "-fx-border-width: 1;" +
-            "-fx-border-radius: 5;" +
-            "-fx-padding: 15;"
-        );
+        listingsPanel.setPadding(new Insets(15));
         listingsPanel.setPrefWidth(300);
-        
-     // Create a container for the title with orange border
+
+        // Title container with orange border
         HBox titleContainer = new HBox();
         titleContainer.setStyle(
-            "-fx-border-color: #FF7F50;" +  // Orange border
-            "-fx-border-width: 1;" +
+            "-fx-border-color: #D94F00;" +  // Orange border
+            "-fx-border-width: 1;" +        // Thicker border
             "-fx-border-radius: 5;" +
             "-fx-padding: 10;"
         );
@@ -352,13 +347,33 @@ public class SellerPage {
         );
         titleContainer.getChildren().add(listingsTitle);
 
+        // Create a container for listings and total price with black border
+        VBox listingsContainer = new VBox(10);
+        listingsContainer.setStyle(
+            "-fx-border-color: black;" +     // Changed to black border
+            "-fx-border-width: 1;" +
+            "-fx-border-radius: 5;" +
+            "-fx-padding: 10;" +
+            "-fx-margin-top: 10;"  // Space between the two bordered containers
+        );
+
+        // VBox for the actual listings
         VBox listings = new VBox(10);
         listings.setMinHeight(200);
 
+        // Total price label
         Label totalPrice = new Label("Total Price: $0.00");
-        totalPrice.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
+        totalPrice.setStyle(
+            "-fx-font-weight: bold;" +
+            "-fx-font-size: 14px;" +
+            "-fx-padding: 10 0 0 0;" +
+            "-fx-border-color: #E8E8E8;" +
+            "-fx-border-width: 1 0 0 0;"
+        );
 
-        listingsPanel.getChildren().addAll(listingsTitle, listings, totalPrice);
+        // Add components to their containers
+        listingsContainer.getChildren().addAll(listings, totalPrice);
+        listingsPanel.getChildren().addAll(titleContainer, listingsContainer);
 
         // Add panels to main layout
         mainLayout.getChildren().addAll(navPanel, formPanel, listingsPanel);
@@ -456,43 +471,46 @@ public class SellerPage {
         return button;
     }
 
-    private static HBox createListingEntry(BookListing listing, VBox listings) {
-        HBox entry = new HBox(10);
+    private static VBox createListingEntry(BookListing listing, VBox listings) {
+        VBox entry = new VBox(5);
         entry.setAlignment(Pos.CENTER_LEFT);
         entry.setPadding(new Insets(5, 0, 5, 0));
+        entry.setStyle("-fx-border-color: #E8E8E8; -fx-border-width: 0 0 1 0;"); // Bottom border only
         
-        // Title on left side
+        // Title
         Label titleLabel = new Label(listing.title);
-        titleLabel.setPrefWidth(150);
         titleLabel.setStyle("-fx-font-size: 14px;");
         
-        // Container for price and delist button (right side)
-        HBox rightSide = new HBox(10);
-        rightSide.setAlignment(Pos.CENTER_RIGHT);
+        // Container for price and delist button
+        HBox bottomRow = new HBox(10);
+        bottomRow.setAlignment(Pos.CENTER_LEFT);
         
         Label priceLabel = new Label(String.format("$%.2f", listing.adjustedPrice));
-        priceLabel.setStyle(
-            "-fx-font-size: 14px;" +
-            "-fx-padding: 6 0 0 0;"  // Align vertically with button
-        );
+        priceLabel.setStyle("-fx-font-size: 14px;");
         
-        Button delistBtn = new Button("Delist");  // Changed from "..." to "Delist"
-        delistBtn.setPrefWidth(100);  // Increased width for "Delist" text
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        
+        Button delistBtn = new Button("Delist");
+        delistBtn.setPrefWidth(80);
         delistBtn.setStyle(
             "-fx-background-color: #8B0000;" +
             "-fx-text-fill: white;" +
             "-fx-padding: 5 15;" +
-            "-fx-background-radius: 0;" +
+            "-fx-border-color: black;" +
+            "-fx-border-radius: 3;" +
+            "-fx-background-radius: 3;" +
             "-fx-cursor: hand;" +
-            "-fx-font-size: 14px"
+            "-fx-font-size: 12px"
         );
         
         delistBtn.setOnAction(e -> {
             currentListings.remove(listing);
             listings.getChildren().remove(entry);
             
-            VBox listingsPanel = (VBox) listings.getParent();
-            for (javafx.scene.Node node : listingsPanel.getChildren()) {
+            // Find and update total price
+            VBox listingsContainer = (VBox) listings.getParent();
+            for (javafx.scene.Node node : listingsContainer.getChildren()) {
                 if (node instanceof Label) {
                     Label label = (Label) node;
                     if (label.getText().startsWith("Total Price")) {
@@ -503,10 +521,9 @@ public class SellerPage {
             }
         });
         
-        rightSide.getChildren().addAll(priceLabel, delistBtn);
-        HBox.setHgrow(rightSide, Priority.ALWAYS);  // Allow right side to grow
+        bottomRow.getChildren().addAll(priceLabel, spacer, delistBtn);
+        entry.getChildren().addAll(titleLabel, bottomRow);
         
-        entry.getChildren().addAll(titleLabel, rightSide);
         return entry;
     }
 
