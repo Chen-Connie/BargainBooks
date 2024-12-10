@@ -1,1 +1,46 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.button {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+    -fx-pref-width: 250px;
+    -fx-pref-height: 70px;
+    -fx-alignment: center;
+}
+
+.button-inactive {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+    -fx-pref-width: 250px;
+    -fx-pref-height: 70px;
+    -fx-alignment: center;
+}
+
+.textfield {
+	-fx-background-color: #ffffff;
+	-fx-padding: 2px;
+    -fx-pref-width: 350px;
+    -fx-pref-height: 35px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: black; 
+    -fx-border-width: 1px;	
+}
+
+.textfield1 {
+	-fx-background-color: #ffffff;
+	-fx-padding: 2px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 35px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: black; 
+    -fx-border-width: 1px;	
+}
+
+.textfield2 {
+	-fx-background-color: #ffffff;
+	-fx-padding: 2px;
+    -fx-pref-width: 700px;
+    -fx-pref-height: 35px;
+    -fx-border-color: black; 
+    -fx-border-width: 1px;	
+}
