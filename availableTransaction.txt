@@ -1,0 +1,13 @@
+1,1066131741,1234567890,Book Title 1,Author 1,1995,Math,Used Like New,100,50.0
+2,1066131741,1234567890,Book Title 2,Author 2,2001,Computer,Moderately Used,100,80.0
+3,6231913542,1234567890,Book Title 3,Author 3,2015,English,Heavily Used,80,8.0
+4,6231913542,1234567890,Book Title 4,Author 4,1998,Natural Science,Used Like New,88,52.8
+5,6231913542,1,Book Title 5,Author 5,2012,Computer,Heavily Used,76,45.6
+6,1199980733,0,Book Title 6,Author 6,2003,Natural Science,Moderately Used,60,30.0
+7,3281149915,0,Book Title 7,Author 7,2018,Other,Heavily Used,56,33.6
+8,1234567890,1,Book Title 8,Author 8,2010,English,Used Like New,30,9.0
+9,1234567890,0,Book Title 9,Author 9,2018,Computer,Used Like New,30,30.0
+10,1234567890,0,Book Title 10,Author 10,2010,Computer,Moderately Used,30,24.0
+11,1234567890,1,GOOD BOOK,GOOD Author,2024,Natural Science,Like New,150,90.0
+12,1234567890,1,On Palaces,John,2002,Other,Moderately Used,120,84.0
+13,1234567890,1,Nature,John,1998,Natural Science,Moderately Used,120,60.0
