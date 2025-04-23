@@ -37,7 +37,7 @@ A desktop application built with JavaFX that enables Arizona State University (A
 - Mocked SQL integration for demo
 ---
 ## How to Run the Project Locally
-Make sure you have Java 17+ and JavaFX SDK installed before running the app.
+Make sure having Java 17+ and JavaFX SDK installed before running the app.
 
 Prerequisites
 Java 17 or higher installed
@@ -47,9 +47,9 @@ JavaFX SDK (Download: https://openjfx.io)
 IDE like IntelliJ IDEA or Eclipse (with JavaFX support)
 
 Steps to Run
-Clone the repository
-git clone https://github.com/Chen-Connie/BargainBooks.git
-cd BargainBooks
+- Clone the repository
+- git clone https://github.com/Chen-Connie/BargainBooks.git
+- cd BargainBooks
 
 Open the project in your preferred IDE (e.g., IntelliJ or Eclipse)
 
