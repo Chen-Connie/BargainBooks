@@ -1,65 +1,108 @@
 # SunDevil Book Buying and Selling System
 
-A desktop application built with JavaFX that enables Arizona State University (ASU) students to buy and sell used textbooks. The platform provides an affordable, student-driven marketplace with secure account creation, dynamic book listings, and condition-based pricing.
+A JavaFX-based desktop application designed for Arizona State University (ASU) students to buy and sell used textbooks. This platform offers an affordable, student-driven marketplace with secure account creation, categorized listings, and condition-based price adjustments.
+
+> Developed as part of a semester-long software engineering course project.
+
 ---
 
 ## Features
 
 - **User Authentication**
-  - Create an account and log in using ASU ID
-  - Form validation and duplicate account checks
+  - Create an account using ASU ID
+  - Form validation and duplicate ID checks
 
-- **Book Listing for Sellers**
-  - Add books with title, author, publish date, original price, and condition
-  - Upload book cover photo
-  - Automatically calculates adjusted selling price based on condition:
-    - *Like New* → 90% of original price  
-    - *Moderately Used* → 75%  
-    - *Heavily Used* → 50%
+- **Book Listings for Sellers**
+  - Add books with title, author, publish date, price, and condition
+  - Upload cover photos
+  - Automatic price adjustment based on condition:
+    - Like New → 90%
+    - Moderately Used → 75%
+    - Heavily Used → 50%
 
-- **Real-Time Book Management**
-  - View current listings
-  - Delist books with one click
-  - Total price calculation across listings
+- **Buyer View**
+  - Browse books by category
+  - View pricing and book condition
+  - Add to cart / purchase directly
 
-- **User Interface**
-  - Built with JavaFX and styled with custom CSS
-  - Responsive layout with intuitive navigation and error handling
+- **Admin Functions**
+  - Remove inappropriate listings
+  - View all users and transactions
+
+- **SceneBuilder Support**
+  - UI designed with JavaFX + SceneBuilder
+  - FXML-based layout
 
 ---
 
-## Technologies Used
+## Project Structure
 
-- Java 17
-- JavaFX (UI components)
-- SceneBuilder (for layout design)
-- CSS (JavaFX styling)
-- Mocked SQL integration for demo
+```
+SunDevilBookSystem/
+├── src/
+│   ├── controllers/          # JavaFX controllers
+│   ├── models/               # Book, User, Admin, etc.
+│   ├── views/                # FXML files
+│   └── Main.java             # Entry point
+├── assets/                   # Book cover images
+├── data/                     # Text-based storage or SQL DB
+└── README.md
+```
+
 ---
+
 ## How to Run the Project Locally
-Make sure having Java 17+ and JavaFX SDK installed before running the app.
 
-Prerequisites
-- Java 17 or higher installed
-- JavaFX SDK (Download: https://openjfx.io)
-- IDE like IntelliJ IDEA or Eclipse (with JavaFX support)
+Make sure you have **Java 17+** and **JavaFX SDK** installed before running the app.
 
-Steps to Run
-1. Clone the repository
-- git clone https://github.com/Chen-Connie/BargainBooks.git
-- cd BargainBooks
+### Prerequisites
 
-2. Open the project in your preferred IDE (e.g., IntelliJ or Eclipse)
+- Java 17 or higher
+- JavaFX SDK ([Download here](https://openjfx.io))
+- IDE like IntelliJ IDEA or Eclipse
 
-3. Configure JavaFX libraries:
+---
 
-- Add your JavaFX SDK path to the project/module settings
+### Steps
 
-- Add VM options to the run configuration:
-  - --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml
+1. **Clone the Repository**
 
-4. Run the main application file
-- Usually named Main.java or located under /src
+   ```bash
+   git clone https://github.com/your-username/SunDevil-Book-System.git
+   cd SunDevil-Book-System
+   ```
 
+2. **Open the Project in your IDE**
 
+   - Import as a Gradle/Maven or standard Java project
 
+3. **Configure JavaFX**
+
+   - Add JavaFX library to your module settings
+   - Add VM options:
+     ```
+     --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml
+     ```
+
+4. **Run the App**
+
+   - Execute `Main.java` in your IDE
+
+---
+
+## Testing
+
+Includes basic functional testing of login, listing creation, and book filtering.
+
+---
+
+## Authors
+
+Developed by a student team at **Arizona State University**.  
+Maintained by **Man-Ning Chen** for portfolio and demonstration purposes.
+
+---
+
+## License
+
+For educational and non-commercial use only. Please contact for reuse permissions.
