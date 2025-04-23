@@ -35,4 +35,33 @@ A desktop application built with JavaFX that enables Arizona State University (A
 - SceneBuilder (for layout design)
 - CSS (JavaFX styling)
 - Mocked SQL integration for demo
+---
+## How to Run the Project Locally
+Make sure you have Java 17+ and JavaFX SDK installed before running the app.
+
+Prerequisites
+Java 17 or higher installed
+
+JavaFX SDK (Download: https://openjfx.io)
+
+IDE like IntelliJ IDEA or Eclipse (with JavaFX support)
+
+Steps to Run
+Clone the repository
+git clone https://github.com/Chen-Connie/BargainBooks.git
+cd BargainBooks
+
+Open the project in your preferred IDE (e.g., IntelliJ or Eclipse)
+
+Configure JavaFX libraries:
+
+Add your JavaFX SDK path to the project/module settings
+
+Add VM options to the run configuration:
+--module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml
+
+Run the main application file
+Usually named Main.java or located under /src
+
+
 
